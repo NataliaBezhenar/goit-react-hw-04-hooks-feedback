@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import FeedbackOptions from "./components/FeedbackOptions";
 import Statistics from "./components/Statistics";
@@ -11,16 +11,15 @@ export default function App() {
   const [bad, setBad] = useState(0);
 
   const handleClick = (btnName) => {
-    console.log(btnName);
     switch (btnName) {
       case "good":
-        setGood(good + 1);
+        setGood((prevState) => prevState + 1);
         break;
       case "neutral":
-        setNeutral(neutral + 1);
+        setNeutral((prevState) => prevState + 1);
         break;
       case "bad":
-        setBad(bad + 1);
+        setBad((prevState) => prevState + 1);
         break;
     }
   };
